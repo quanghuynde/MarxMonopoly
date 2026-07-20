@@ -8,6 +8,7 @@ import { useGame } from '../game/GameContext';
 import { playSound, resumeAudio } from '../game/sound';
 import { Play, BookOpen, RotateCcw, Sparkles, Trophy, Brain, Heart, Calendar } from 'lucide-react';
 import { getDailySeed, getDailyHighScore } from '../game/daily';
+import { Guilloche } from '../components/Guilloche';
 
 export function HomeScreen() {
   const { dispatch, state, clearSave } = useGame();
@@ -40,16 +41,16 @@ export function HomeScreen() {
       )}
 
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 120 }} className="relative z-10 flex flex-col items-center text-center">
-        <motion.div animate={{ rotate: [0, -4, 4, 0] }} transition={{ duration: 4, repeat: Infinity }} className="mb-3 flex h-20 w-20 items-center justify-center rounded-3xl bg-gold-500 shadow-glow">
+        <motion.div animate={{ rotate: [0, -4, 4, 0] }} transition={{ duration: 4, repeat: Infinity }} className="mb-3 flex h-20 w-20 items-center justify-center rounded-3xl bg-brass-500 shadow-glow">
           <span className="text-4xl">🎲</span>
         </motion.div>
-        <div className="mb-1 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.3em] text-gold-400">
+        <div className="mb-1 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.3em] text-brass-400">
           <Sparkles size={16} /> Board Game Giáo Dục
         </div>
         <h1 className="font-display text-5xl font-extrabold text-white text-shadow-lg sm:text-7xl">
           MarxMonopoly
         </h1>
-        <h2 className="font-display text-2xl font-extrabold text-gold-400 sm:text-4xl">CỜ TỶ PHÚ KINH TẾ HỌC</h2>
+        <h2 className="font-display text-2xl font-extrabold text-brass-400 sm:text-4xl">CỜ TỶ PHÚ KINH TẾ HỌC</h2>
         <p className="mt-3 max-w-md text-sm text-white/60 sm:text-base">
           Học Kinh tế chính trị Mác – Lênin, kinh tế thị trường, công nghiệp hoá & hội nhập
           qua các chế độ chơi cực kỳ thú vị.
@@ -77,13 +78,15 @@ export function HomeScreen() {
           </motion.div>
         )}
 
+        <Guilloche className="mt-4 w-40 text-brass-400/50" height={6} />
+
         <div className="mt-6 flex w-full max-w-xs flex-col gap-3">
           {hasSave &&
           <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => go('playing')} className="flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 py-4 font-display text-lg font-extrabold text-white shadow-card transition-colors hover:bg-emerald-400">
               <RotateCcw size={22} /> Tiếp tục ván đang chơi
             </motion.button>
           }
-          <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => {clearSave();go('modeSelect');}} className="flex items-center justify-center gap-2 rounded-2xl bg-gold-500 py-4 font-display text-lg font-extrabold text-ink-950 shadow-glow transition-colors hover:bg-gold-400">
+          <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => {clearSave();go('modeSelect');}} className="flex items-center justify-center gap-2 rounded-2xl bg-brass-500 py-4 font-display text-lg font-extrabold text-ink-950 shadow-glow transition-colors hover:bg-brass-400">
             <Play size={22} /> {hasSave ? 'Ván mới' : 'Bắt đầu chơi'}
           </motion.button>
           <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => go('guide')} className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-ink-800 py-3.5 font-bold text-white transition-colors hover:border-white/30">

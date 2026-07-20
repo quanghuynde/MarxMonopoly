@@ -4,6 +4,7 @@ import { useGame } from '../game/GameContext';
 import { playSound } from '../game/sound';
 import { Target, Infinity, BookOpen, Calendar, ArrowLeft, Users } from 'lucide-react';
 import { getDailySeed, getDailyHighScore } from '../game/daily';
+import { Guilloche } from '../components/Guilloche';
 import { GameMode } from '../game/types';
 
 interface ModeOption {
@@ -66,9 +67,9 @@ export function ModeSelectScreen() {
       id: 'solo',
       title: 'Solo Campaign (Chiến Dịch)',
       desc: 'Hoàn thành mục tiêu điểm số kinh tế trong giới hạn 5 vòng đấu.',
-      icon: <Target className="h-8 w-8 text-gold-400" />,
-      color: 'from-gold-600/20 to-gold-400/5 hover:border-gold-400/40 border-white/10',
-      accent: 'text-gold-400',
+      icon: <Target className="h-8 w-8 text-brass-400" />,
+      color: 'from-brass-600/20 to-brass-400/5 hover:border-brass-400/40 border-white/10',
+      accent: 'text-brass-400',
       benefits: ['Đặt mục tiêu 400 điểm', 'Đánh giá xếp hạng sao (⭐)', 'Rèn luyện kỹ năng kinh tế']
     },
     {
@@ -109,7 +110,7 @@ export function ModeSelectScreen() {
             <ArrowLeft size={16} /> <span>Quay lại</span>
           </button>
           <div className="text-right">
-            <div className="font-display text-sm font-bold uppercase tracking-wider text-gold-400">Chế độ chơi</div>
+            <div className="font-display text-sm font-bold uppercase tracking-wider text-brass-400">Chế độ chơi</div>
             <div className="text-[10px] text-white/40 uppercase tracking-widest">Chọn chế độ Single-Player hoặc Multiplayer</div>
           </div>
         </div>
@@ -133,6 +134,7 @@ export function ModeSelectScreen() {
               onClick={() => selectMode(m.id)}
               className={`cursor-pointer flex flex-col justify-between rounded-3xl border bg-gradient-to-br p-6 transition-all shadow-card ${m.color}`}
             >
+              <Guilloche className={`-mt-2 mb-3 w-full ${m.accent}`} height={8} />
               <div>
                 <div className="mb-4 flex items-center justify-between">
                   {m.icon}
@@ -169,7 +171,7 @@ export function ModeSelectScreen() {
             onClick={() => selectMode('multiplayer')}
             className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 font-bold text-white transition-colors hover:bg-white/10 hover:border-white/20"
           >
-            <Users size={20} className="text-gold-400" />
+            <Users size={20} className="text-brass-400" />
             <span>Chế độ nhiều người chơi (Local Multiplayer)</span>
           </button>
         </motion.div>
