@@ -6,6 +6,7 @@ import { playSound } from '../game/sound';
 import { Home, RotateCcw, Crown, Gamepad2, Award, Star, ArrowRight } from 'lucide-react';
 import { STORY_CHAPTERS } from '../game/data/story';
 import { saveDailyHighScore } from '../game/daily';
+import { Guilloche } from '../components/Guilloche';
 
 export function FinalSummaryScreen() {
   const { state, dispatch, clearSave } = useGame();
@@ -100,7 +101,7 @@ export function FinalSummaryScreen() {
         {isSolo ? (
           <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="mb-6 flex flex-col items-center text-center">
             {evalResult.passed ? (
-              <Crown className="mb-1 text-gold-400 animate-bounce" size={48} />
+              <Crown className="mb-1 text-brass-400 animate-bounce" size={48} />
             ) : (
               <span className="text-5xl mb-2">😢</span>
             )}
@@ -112,7 +113,7 @@ export function FinalSummaryScreen() {
             </div>
             
             <h1 className="mt-2 font-display text-4xl font-extrabold text-white">{champion.name}</h1>
-            <div className="mt-1 flex items-center gap-1.5 text-2xl font-extrabold text-gold-400">
+            <div className="mt-1 flex items-center gap-1.5 text-2xl font-extrabold text-brass-400">
               <span>{score} điểm</span>
               {state.gameMode !== 'endless' && (
                 <span className="text-xs text-white/40 font-semibold">(Mục tiêu: {target}đ)</span>
@@ -121,9 +122,9 @@ export function FinalSummaryScreen() {
 
             {/* Star Rating display */}
             {state.gameMode !== 'endless' && (
-              <div className="mt-3 flex gap-2 text-gold-400">
+              <div className="mt-3 flex gap-2 text-brass-400">
                 {[1, 2, 3].map((s) => (
-                  <Star key={s} size={24} fill={evalResult.stars >= s ? 'currentColor' : 'none'} className={evalResult.stars >= s ? 'scale-110 drop-shadow-[0_0_8px_#f5b83d]' : 'opacity-20'} />
+                  <Star key={s} size={24} fill={evalResult.stars >= s ? 'currentColor' : 'none'} className={evalResult.stars >= s ? 'scale-110 drop-shadow-[0_0_8px_#c8933f]' : 'opacity-20'} />
                 ))}
               </div>
             )}
@@ -132,7 +133,7 @@ export function FinalSummaryScreen() {
             <div className="mt-4 flex flex-col items-center">
               <div className={`flex items-center justify-center h-16 w-16 rounded-2xl font-display text-3xl font-black border-2 bg-white/5 shadow-glow ${
                 evalResult.rank === 'S' || evalResult.rank === 'A' ? 'text-emerald-400 border-emerald-400/40' :
-                evalResult.rank === 'B' || evalResult.rank === 'C' ? 'text-gold-400 border-gold-400/40' : 'text-rose-500 border-rose-500/40'
+                evalResult.rank === 'B' || evalResult.rank === 'C' ? 'text-brass-400 border-brass-400/40' : 'text-rose-500 border-rose-500/40'
               }`}>
                 {evalResult.rank}
               </div>
@@ -143,16 +144,17 @@ export function FinalSummaryScreen() {
           </motion.div>
         ) : (
           <motion.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 160 }} className="mb-6 flex flex-col items-center text-center">
-            <Crown className="mb-1 text-gold-400" size={40} />
-            <div className="text-sm font-bold uppercase tracking-[0.3em] text-gold-400">Nhà vô địch</div>
+            <Crown className="mb-1 text-brass-400" size={40} />
+            <div className="text-sm font-bold uppercase tracking-[0.3em] text-brass-400">Nhà vô địch</div>
             <div className="mt-2 text-6xl">{champion.character.emoji}</div>
             <h1 className="font-display text-4xl font-extrabold text-white text-shadow-lg">{champion.name}</h1>
             <div className={`font-bold ${champion.character.accent}`}>{champion.character.title}</div>
-            <div className="mt-1 font-display text-3xl font-extrabold text-gold-400">{score} điểm</div>
+            <div className="mt-1 font-display text-3xl font-extrabold text-brass-400">{score} điểm</div>
+            <Guilloche className="mt-2 w-32 text-brass-400/50" height={6} />
             {titles[champion.id]?.length > 0 &&
             <div className="mt-2 flex flex-wrap justify-center gap-1.5">
                 {titles[champion.id].map((t) =>
-              <span key={t} className="rounded-full bg-gold-400/20 px-2.5 py-1 text-xs font-bold text-gold-400">🏅 {t}</span>
+              <span key={t} className="rounded-full bg-brass-400/20 px-2.5 py-1 text-xs font-bold text-brass-400">🏅 {t}</span>
               )}
               </div>
             }
@@ -165,18 +167,18 @@ export function FinalSummaryScreen() {
             <h2 className="mb-3 font-display text-xl font-extrabold text-white">Bảng xếp hạng</h2>
             <div className="space-y-2">
               {ranked.map((p, i) =>
-              <motion.div key={p.id} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 + i * 0.1 }} className={`flex flex-wrap items-center gap-3 rounded-2xl border p-3 ${i === 0 ? 'border-gold-400/60 bg-gold-400/10' : 'border-white/10 bg-ink-850'}`}>
+              <motion.div key={p.id} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 + i * 0.1 }} className={`flex flex-wrap items-center gap-3 rounded-2xl border p-3 ${i === 0 ? 'border-brass-400/60 bg-brass-400/10' : 'border-white/10 bg-ink-850'}`}>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 font-extrabold text-white">{i + 1}</span>
                   <span className="text-2xl">{p.character.emoji}</span>
                   <div className="min-w-[80px] flex-1">
                     <div className="font-bold text-white">{p.name}</div>
                     <div className="flex flex-wrap gap-1">
                       {(titles[p.id] || []).map((t) =>
-                    <span key={t} className="text-[10px] font-bold text-gold-400/80">🏅{t}</span>
+                    <span key={t} className="text-[10px] font-bold text-brass-400/80">🏅{t}</span>
                     )}
                     </div>
                   </div>
-                  <span className="font-display text-xl font-extrabold text-gold-400">{totalScore(p)}</span>
+                  <span className="font-display text-xl font-extrabold text-brass-400">{totalScore(p)}</span>
                 </motion.div>
               )}
             </div>
@@ -228,7 +230,7 @@ export function FinalSummaryScreen() {
               <span>Chương tiếp theo</span> <ArrowRight size={20} />
             </motion.button>
           ) : (
-            <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={restart} className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-gold-500 py-4 font-display text-lg font-extrabold text-ink-950 shadow-glow transition-colors hover:bg-gold-400">
+            <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={restart} className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-brass-500 py-4 font-display text-lg font-extrabold text-ink-950 shadow-glow transition-colors hover:bg-brass-400">
               <RotateCcw size={20} /> {state.gameMode === 'story' && !evalResult.passed ? 'Thử lại chương này' : 'Chơi lại'}
             </motion.button>
           )}

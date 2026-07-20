@@ -41,7 +41,7 @@ export function RoundSummaryScreen() {
     <div className="min-h-full w-full overflow-y-auto bg-ink-950 bg-grid px-4 py-8">
       <div className="mx-auto max-w-2xl">
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-6 text-center">
-          <div className="text-sm font-bold uppercase tracking-[0.3em] text-gold-400">Tổng kết</div>
+          <div className="text-sm font-bold uppercase tracking-[0.3em] text-brass-400">Tổng kết</div>
           <h1 className="font-display text-4xl font-extrabold text-white text-shadow-lg">Vòng {state.round}</h1>
         </motion.div>
 
@@ -61,7 +61,7 @@ export function RoundSummaryScreen() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ type: 'spring', stiffness: 140 }}
-                  className="overflow-hidden rounded-2xl border border-gold-400/40 bg-gold-400/5 p-5"
+                  className="overflow-hidden rounded-2xl border border-brass-400/40 bg-brass-400/5 p-5"
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-4xl">{p.character.emoji}</span>
@@ -70,7 +70,7 @@ export function RoundSummaryScreen() {
                       <div className={`text-xs font-bold ${p.character.accent}`}>{p.character.title}</div>
                     </div>
                     <div className="text-right">
-                      <motion.div key={total} initial={{ scale: 1.4, color: '#f5b83d' }} animate={{ scale: 1, color: '#ffffff' }} className="font-display text-3xl font-extrabold text-gold-400">
+                      <motion.div key={total} initial={{ scale: 1.4, color: '#c8933f' }} animate={{ scale: 1, color: '#ffffff' }} className="font-display text-3xl font-extrabold text-brass-400">
                         {total}
                       </motion.div>
                       <div className="text-[10px] uppercase tracking-wide text-white/40">tổng điểm</div>
@@ -84,7 +84,7 @@ export function RoundSummaryScreen() {
                         <span className="font-bold text-white">{total}/{target} điểm</span>
                       </div>
                       <div className="h-2.5 w-full rounded-full bg-white/10 overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-gold-500 to-gold-400 transition-all duration-500" style={{ width: `${Math.min(100, (total / target) * 100)}%` }} />
+                        <div className="h-full bg-gradient-to-r from-brass-500 to-brass-400 transition-all duration-500" style={{ width: `${Math.min(100, (total / target) * 100)}%` }} />
                       </div>
                       {total >= target ? (
                         <div className="text-emerald-400 text-[11px] font-bold mt-1.5 flex items-center gap-1">
@@ -92,7 +92,7 @@ export function RoundSummaryScreen() {
                         </div>
                       ) : (
                         <div className="text-white/40 text-[11px] mt-1.5">
-                          Cần thêm <span className="text-gold-400 font-bold">{target - total}</span> điểm nữa.
+                          Cần thêm <span className="text-brass-400 font-bold">{target - total}</span> điểm nữa.
                         </div>
                       )}
                     </div>
@@ -122,7 +122,7 @@ export function RoundSummaryScreen() {
 
                   <div className="mt-3 flex items-center gap-3 text-[11px] font-semibold text-white/50 justify-center">
                     <span className="flex items-center gap-1"><Brain size={12} className="text-sky-400" />Tri thức: {p.knowledge}</span>
-                    <span className="flex items-center gap-1"><Coins size={12} className="text-gold-400" />Tài sản: {p.assets}</span>
+                    <span className="flex items-center gap-1"><Coins size={12} className="text-brass-400" />Tài sản: {p.assets}</span>
                     <span className="flex items-center gap-1"><Target size={12} className="text-lime-400" />Chiến lược: {p.strategy}</span>
                   </div>
                 </motion.div>
@@ -138,7 +138,7 @@ export function RoundSummaryScreen() {
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.12, type: 'spring', stiffness: 140 }}
-                  className={`overflow-hidden rounded-2xl border p-4 ${i === 0 ? 'border-gold-400/60 bg-gold-400/10' : 'border-white/10 bg-ink-850'}`}>
+                  className={`overflow-hidden rounded-2xl border p-4 ${i === 0 ? 'border-brass-400/60 bg-brass-400/10' : 'border-white/10 bg-ink-850'}`}>
                   
                   <div className="flex items-center gap-3">
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 font-extrabold text-white">{i + 1}</span>
@@ -148,7 +148,7 @@ export function RoundSummaryScreen() {
                       <div className={`text-xs font-bold ${p.character.accent}`}>{p.character.title}</div>
                     </div>
                     <div className="text-right">
-                      <motion.div key={totalScore(p)} initial={{ scale: 1.4, color: '#f5b83d' }} animate={{ scale: 1, color: '#ffffff' }} className="font-display text-2xl font-extrabold text-white">
+                      <motion.div key={totalScore(p)} initial={{ scale: 1.4, color: '#c8933f' }} animate={{ scale: 1, color: '#ffffff' }} className="font-display text-2xl font-extrabold text-white">
                         {totalScore(p)}
                       </motion.div>
                       <div className="text-[10px] uppercase tracking-wide text-white/40">tổng điểm</div>
@@ -166,7 +166,7 @@ export function RoundSummaryScreen() {
                   </div>
                   <div className="mt-2 flex items-center gap-3 text-[11px] font-semibold text-white/50">
                     <span className="flex items-center gap-1"><Brain size={12} className="text-sky-400" />{p.knowledge}</span>
-                    <span className="flex items-center gap-1"><Coins size={12} className="text-gold-400" />{p.assets}</span>
+                    <span className="flex items-center gap-1"><Coins size={12} className="text-brass-400" />{p.assets}</span>
                     <span className="flex items-center gap-1"><Target size={12} className="text-lime-400" />{p.strategy}</span>
                     <span className="flex items-center gap-1"><Gamepad2 size={12} className="text-purple-400" />{p.miniScore}</span>
                   </div>
@@ -182,7 +182,7 @@ export function RoundSummaryScreen() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           onClick={next}
-          className="mt-7 flex w-full items-center justify-center gap-2 rounded-2xl bg-gold-500 py-4 font-display text-lg font-extrabold text-ink-950 shadow-glow transition-colors hover:bg-gold-400">
+          className="mt-7 flex w-full items-center justify-center gap-2 rounded-2xl bg-brass-500 py-4 font-display text-lg font-extrabold text-ink-950 shadow-glow transition-colors hover:bg-brass-400">
           
           {isFinalRound ? 'Xem nhà vô địch' : `Bắt đầu vòng ${state.round + 1}`} <ArrowRight size={22} />
         </motion.button>
