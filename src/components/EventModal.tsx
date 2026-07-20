@@ -146,7 +146,7 @@ export function EventModal({ tile, player, onResolve }: Props) {
               key="resolved"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              className="rounded-xl border border-gold-400/30 bg-gold-400/10 p-4 text-center">
+              className="rounded-xl border border-brass-400/30 bg-brass-400/10 p-4 text-center">
               
                 <div className="mb-1 text-3xl">✨</div>
                 <p className="text-sm font-semibold text-white">{resolved.msg}</p>
@@ -161,7 +161,7 @@ export function EventModal({ tile, player, onResolve }: Props) {
                 onClick={() => handleOption(opt)}
                 whileHover={{ scale: 1.02, x: 3 }}
                 whileTap={{ scale: 0.98 }}
-                className="group flex w-full items-center justify-between gap-3 rounded-xl border border-white/10 bg-ink-800 p-3 text-left transition-colors hover:border-gold-400/50 hover:bg-ink-700">
+                className="group flex w-full items-center justify-between gap-3 rounded-xl border border-white/10 bg-ink-800 p-3 text-left transition-colors hover:border-brass-400/50 hover:bg-ink-700">
                 
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
@@ -184,7 +184,7 @@ export function EventModal({ tile, player, onResolve }: Props) {
               onClick={handleFixed}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gold-500 py-3 font-bold text-ink-950 shadow-glow transition-colors hover:bg-gold-400">
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-brass-500 py-3 font-bold text-ink-950 shadow-glow transition-colors hover:bg-brass-400">
               
                 Tiếp tục <ArrowRight size={18} />
               </motion.button>

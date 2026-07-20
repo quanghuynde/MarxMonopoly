@@ -20,7 +20,7 @@ interface Props {
   accent?: string;
 }
 
-export function Dice({ onResult, disabled, accent = '#f5b83d' }: Props) {
+export function Dice({ onResult, disabled, accent = '#c8933f' }: Props) {
   const [value, setValue] = useState(1);
   const [rolling, setRolling] = useState(false);
 

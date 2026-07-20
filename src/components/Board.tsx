@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import type { Player } from '../game/types';
 import { TILES, BOARD_SIZE } from '../game/data/tiles';
 import { Icon } from './Icon';
+import { Guilloche } from './Guilloche';
 
 interface Props {
   players: Player[];
@@ -114,15 +115,14 @@ export function Board({ players, currentPlayerId, highlightPos }: Props) {
         })}
       </div>
 
-      {/* Center emblem */}
+      {/* Center emblem — seal medallion */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="flex flex-col items-center gap-1 text-center">
-          <div className="rounded-2xl border border-gold-400/30 bg-ink-900/70 px-4 py-3 backdrop-blur-sm">
-            <div className="font-display text-lg font-extrabold text-gold-400 sm:text-2xl">MarxMonopoly</div>
-            <div className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/50 sm:text-xs">
-              Cờ Tỷ Phú Kinh Tế Học
-            </div>
+        <div className="flex flex-col items-center gap-1 rounded-full border border-brass-400/40 bg-ink-900/70 px-6 py-5 text-center backdrop-blur-sm">
+          <div className="font-display text-lg font-extrabold text-brass-400 sm:text-2xl">MarxMonopoly</div>
+          <div className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/50 sm:text-xs">
+            Cờ Tỷ Phú Kinh Tế Học
           </div>
+          <Guilloche className="mt-1 w-20 text-brass-400/60" height={6} />
         </div>
       </div>
     </div>);
