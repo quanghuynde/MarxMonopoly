@@ -12,7 +12,7 @@ export const TILES: Tile[] = [
   name: 'Xuất Phát',
   category: 'start',
   icon: 'Flag',
-  color: '#f5b83d',
+  color: '#c8933f',
   knowledge: 'Điểm khởi đầu của quá trình tái sản xuất. Mỗi vòng quay là một chu kỳ kinh tế mới.',
   story: 'Bạn bước vào nền kinh tế với vốn tri thức ban đầu. Hành trình tích luỹ bắt đầu!',
   fixed: { knowledge: 5, text: 'Qua ô Xuất Phát, nhận +5 tri thức khởi đầu chu kỳ mới.' }
@@ -97,7 +97,7 @@ export const TILES: Tile[] = [
   name: 'Tiền Tệ',
   category: 'knowledge',
   icon: 'Coins',
-  color: '#f5b83d',
+  color: '#c8933f',
   knowledge: 'Tiền tệ là hàng hoá đặc biệt, vật ngang giá chung, đo lường giá trị mọi hàng hoá.',
   story: 'Từ vỏ sò đến vàng rồi tiền giấy — tiền ra đời để trao đổi trở nên dễ dàng.',
   fixed: { knowledge: 8, assets: 4, text: 'Làm chủ chức năng tiền tệ: +8 tri thức, +4 tài sản.' }
@@ -145,7 +145,7 @@ export const TILES: Tile[] = [
   name: 'Ô Thưởng',
   category: 'reward',
   icon: 'Gift',
-  color: '#f5b83d',
+  color: '#c8933f',
   story: 'Doanh nghiệp của bạn đạt cột mốc doanh thu ấn tượng!',
   fixed: { assets: 15, strategy: 3, text: 'Phần thưởng hiệu quả: +15 tài sản, +3 chiến lược.' }
 },
@@ -258,7 +258,7 @@ export const TILES: Tile[] = [
   name: 'Ô Nhân Đôi Điểm',
   category: 'double',
   icon: 'Star',
-  color: '#f5b83d',
+  color: '#c8933f',
   story: 'Điểm số vòng này của bạn được tăng cường mạnh mẽ!',
   fixed: { knowledge: 12, text: 'Nhân đôi thành quả: +12 tri thức thưởng!' }
 },
@@ -402,7 +402,7 @@ export const TILES: Tile[] = [
   name: 'Ngân Hàng',
   category: 'knowledge',
   icon: 'Building2',
-  color: '#f5b83d',
+  color: '#c8933f',
   knowledge: 'Ngân hàng là trung gian tín dụng, điều tiết dòng vốn và chính sách tiền tệ.',
   story: 'Bạn được ngân hàng cấp hạn mức tín dụng ưu đãi để mở rộng kinh doanh.',
   fixed: { assets: 10, text: 'Tiếp cận vốn tín dụng: +10 tài sản.' }
@@ -454,7 +454,7 @@ export const TILES: Tile[] = [
   name: 'Ô Thưởng',
   category: 'reward',
   icon: 'Trophy',
-  color: '#f5b83d',
+  color: '#c8933f',
   story: 'Chiến lược kinh doanh của bạn được vinh danh!',
   fixed: { assets: 12, strategy: 5, text: 'Vinh danh chiến lược: +12 tài sản, +5 chiến lược.' }
 },
