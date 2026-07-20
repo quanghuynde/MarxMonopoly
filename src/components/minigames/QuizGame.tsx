@@ -93,7 +93,7 @@ export function QuizGame({ players, onComplete }: Props) {
             setIntro(false);
             setTime(TIME_PER_Q);
           }}
-          className="mt-2 rounded-xl bg-gold-500 px-8 py-3 font-bold text-ink-950 shadow-glow">
+          className="mt-2 rounded-xl bg-brass-500 px-8 py-3 font-bold text-ink-950 shadow-glow">
           
           Bắt đầu
         </motion.button>
@@ -117,7 +117,7 @@ export function QuizGame({ players, onComplete }: Props) {
       </div>
 
       <div className="mb-4 h-1.5 overflow-hidden rounded-full bg-white/10">
-        <motion.div className="h-full bg-gold-400" animate={{ width: `${time / TIME_PER_Q * 100}%` }} transition={{ ease: 'linear' }} />
+        <motion.div className="h-full bg-brass-400" animate={{ width: `${time / TIME_PER_Q * 100}%` }} transition={{ ease: 'linear' }} />
       </div>
 
       <AnimatePresence mode="wait">
@@ -127,7 +127,7 @@ export function QuizGame({ players, onComplete }: Props) {
             {question.options.map((opt, i) => {
               const isAns = i === question.answer;
               const isPicked = i === picked;
-              let cls = 'border-white/10 bg-ink-800 hover:border-gold-400/50';
+              let cls = 'border-white/10 bg-ink-800 hover:border-brass-400/50';
               if (picked !== null) {
                 if (isAns) cls = 'border-emerald-400 bg-emerald-500/15';else
                 if (isPicked) cls = 'border-rose-400 bg-rose-500/15';else

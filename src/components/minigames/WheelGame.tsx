@@ -20,7 +20,7 @@ interface Props {
 
 const SEGMENTS = [
 { label: 'x1', mult: 1, color: '#38bdf8' },
-{ label: 'x2', mult: 2, color: '#f5b83d' },
+{ label: 'x2', mult: 2, color: '#c8933f' },
 { label: 'x1', mult: 1, color: '#a3e635' },
 { label: 'x3', mult: 3, color: '#f43f5e' },
 { label: 'x1', mult: 1, color: '#c084fc' },
@@ -111,7 +111,7 @@ export function WheelGame({ players, onComplete }: Props) {
           whileTap={{ scale: 0.95 }}
           disabled={phase === 'spin'}
           onClick={() => {setPhase('spin');spin();}}
-          className="rounded-xl bg-gold-500 px-8 py-3 font-bold text-ink-950 shadow-glow disabled:opacity-60">
+          className="rounded-xl bg-brass-500 px-8 py-3 font-bold text-ink-950 shadow-glow disabled:opacity-60">
           
             {phase === 'spin' ? 'Đang quay...' : 'Quay!'}
           </motion.button>
@@ -121,13 +121,13 @@ export function WheelGame({ players, onComplete }: Props) {
       {(phase === 'question' || phase === 'result') &&
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md">
           <div className="mb-3 text-center">
-            <span className="rounded-full bg-gold-400/20 px-3 py-1 font-display text-lg font-extrabold text-gold-400">Hệ số x{mult}</span>
+            <span className="rounded-full bg-brass-400/20 px-3 py-1 font-display text-lg font-extrabold text-brass-400">Hệ số x{mult}</span>
           </div>
           <h3 className="mb-4 text-center text-lg font-bold text-white">{question.q}</h3>
           <div className="grid grid-cols-1 gap-2.5">
             {question.options.map((opt, i) => {
             const isAns = i === question.answer;
-            let cls = 'border-white/10 bg-ink-800 hover:border-gold-400/50';
+            let cls = 'border-white/10 bg-ink-800 hover:border-brass-400/50';
             if (picked !== null) {
               if (isAns) cls = 'border-emerald-400 bg-emerald-500/15';else
               if (i === picked) cls = 'border-rose-400 bg-rose-500/15';else

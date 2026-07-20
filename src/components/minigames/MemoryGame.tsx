@@ -99,7 +99,7 @@ export function MemoryGame({ players, onComplete }: Props) {
         <motion.div initial={{ scale: 0.5 }} animate={{ scale: 1 }} className="text-6xl">{player.character.emoji}</motion.div>
         <div className="font-display text-2xl font-extrabold text-white">Lượt của {player.name}</div>
         <div className="text-sm text-white/60">Lật thẻ, ghép khái niệm với định nghĩa trong {TIME_LIMIT}s</div>
-        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => {playSound('click');setIntro(false);setTime(TIME_LIMIT);}} className="mt-2 rounded-xl bg-gold-500 px-8 py-3 font-bold text-ink-950 shadow-glow">Bắt đầu</motion.button>
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => {playSound('click');setIntro(false);setTime(TIME_LIMIT);}} className="mt-2 rounded-xl bg-brass-500 px-8 py-3 font-bold text-ink-950 shadow-glow">Bắt đầu</motion.button>
       </div>);
 
   }
@@ -119,7 +119,7 @@ export function MemoryGame({ players, onComplete }: Props) {
                 <div className="absolute inset-0 flex items-center justify-center rounded-xl border border-white/10 bg-ink-700 text-2xl" style={{ backfaceVisibility: 'hidden' }}>❓</div>
                 <div
                   className={`absolute inset-0 flex items-center justify-center rounded-xl border p-1.5 text-center text-[10px] font-bold leading-tight sm:text-xs ${
-                  matched.includes(card.pairId) ? 'border-emerald-400/50 bg-emerald-500/15 text-emerald-300' : card.kind === 'term' ? 'border-gold-400/40 bg-gold-400/10 text-gold-300' : 'border-sky-400/40 bg-sky-400/10 text-sky-200'}`
+                  matched.includes(card.pairId) ? 'border-emerald-400/50 bg-emerald-500/15 text-emerald-300' : card.kind === 'term' ? 'border-brass-400/40 bg-brass-400/10 text-brass-300' : 'border-sky-400/40 bg-sky-400/10 text-sky-200'}`
                   }
                   style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
                   

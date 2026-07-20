@@ -92,7 +92,7 @@ export function MatchGame({ players, onComplete }: Props) {
         <motion.div initial={{ scale: 0.5 }} animate={{ scale: 1 }} className="text-6xl">{player.character.emoji}</motion.div>
         <div className="font-display text-2xl font-extrabold text-white">Lượt của {player.name}</div>
         <div className="text-sm text-white/60">Nối khái niệm với định nghĩa đúng trong {TIME_LIMIT}s</div>
-        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => {playSound('click');setIntro(false);setTime(TIME_LIMIT);}} className="mt-2 rounded-xl bg-gold-500 px-8 py-3 font-bold text-ink-950 shadow-glow">Bắt đầu</motion.button>
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => {playSound('click');setIntro(false);setTime(TIME_LIMIT);}} className="mt-2 rounded-xl bg-brass-500 px-8 py-3 font-bold text-ink-950 shadow-glow">Bắt đầu</motion.button>
       </div>);
 
   }
@@ -113,7 +113,7 @@ export function MatchGame({ players, onComplete }: Props) {
             onClick={() => pickTerm(p.term)}
             whileTap={{ scale: 0.97 }}
             className={`w-full rounded-xl border p-2.5 text-left text-sm font-bold transition-colors ${
-            matched[p.term] ? 'border-emerald-400/40 bg-emerald-500/10 text-emerald-400 line-through opacity-60' : selectedTerm === p.term ? 'border-gold-400 bg-gold-400/15 text-white' : 'border-white/10 bg-ink-800 text-white hover:border-white/30'}`
+            matched[p.term] ? 'border-emerald-400/40 bg-emerald-500/10 text-emerald-400 line-through opacity-60' : selectedTerm === p.term ? 'border-brass-400 bg-brass-400/15 text-white' : 'border-white/10 bg-ink-800 text-white hover:border-white/30'}`
             }>
             
               {p.term}

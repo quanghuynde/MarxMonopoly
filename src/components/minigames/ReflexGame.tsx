@@ -97,8 +97,8 @@ export function ReflexGame({ players, onComplete }: Props) {
       <div className="flex flex-1 flex-col items-center justify-center gap-4 p-6 text-center">
         <motion.div initial={{ scale: 0.5 }} animate={{ scale: 1 }} className="text-6xl">{player.character.emoji}</motion.div>
         <div className="font-display text-2xl font-extrabold text-white">Lượt của {player.name}</div>
-        <div className="max-w-xs text-sm text-white/60">Chạm <span className="text-gold-400">💰 Giá trị</span> để ghi điểm, tránh <span className="text-rose-400">💥 Khủng hoảng</span>!</div>
-        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => {playSound('click');setIntro(false);setTime(DURATION);}} className="mt-2 rounded-xl bg-gold-500 px-8 py-3 font-bold text-ink-950 shadow-glow">Bắt đầu</motion.button>
+        <div className="max-w-xs text-sm text-white/60">Chạm <span className="text-brass-400">💰 Giá trị</span> để ghi điểm, tránh <span className="text-rose-400">💥 Khủng hoảng</span>!</div>
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => {playSound('click');setIntro(false);setTime(DURATION);}} className="mt-2 rounded-xl bg-brass-500 px-8 py-3 font-bold text-ink-950 shadow-glow">Bắt đầu</motion.button>
       </div>);
 
   }
@@ -108,7 +108,7 @@ export function ReflexGame({ players, onComplete }: Props) {
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2"><span className="text-2xl">{player.character.emoji}</span><span className="text-sm font-bold text-white">{player.name}</span></div>
         <div className="flex items-center gap-3">
-          <span className="flex items-center gap-1 font-bold text-gold-400"><Coins size={16} /> {score}</span>
+          <span className="flex items-center gap-1 font-bold text-brass-400"><Coins size={16} /> {score}</span>
           <span className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 font-bold ${time <= 5 ? 'bg-rose-500/20 text-rose-400' : 'bg-white/10 text-white'}`}><Clock size={16} /> {time}s</span>
         </div>
       </div>
@@ -124,10 +124,10 @@ export function ReflexGame({ players, onComplete }: Props) {
             onClick={() => hit(t)}
             style={{ left: `${t.x}%`, top: `${t.y}%` }}
             className={`absolute flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full text-2xl shadow-lg ${
-            t.type === 'coin' ? 'bg-gold-400/25 ring-2 ring-gold-400' : 'bg-rose-500/25 ring-2 ring-rose-500'}`
+            t.type === 'coin' ? 'bg-brass-400/25 ring-2 ring-brass-400' : 'bg-rose-500/25 ring-2 ring-rose-500'}`
             }>
             
-              {t.type === 'coin' ? <Coins className="text-gold-400" size={24} /> : <Bomb className="text-rose-400" size={24} />}
+              {t.type === 'coin' ? <Coins className="text-brass-400" size={24} /> : <Bomb className="text-rose-400" size={24} />}
             </motion.button>
           )}
         </AnimatePresence>
