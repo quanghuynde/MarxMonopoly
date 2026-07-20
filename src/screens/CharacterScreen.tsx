@@ -117,8 +117,8 @@ export function CharacterScreen() {
                     <button
                       key={i}
                       onClick={() => {playSound('click');setActive(i);}}
-                      className={`flex flex-col items-center gap-1 rounded-2xl border-2 px-8 py-3 transition-all border-gold-400 bg-ink-700`}>
-                      <span className="text-[10px] font-bold uppercase tracking-wide text-gold-400">Bạn</span>
+                      className={`flex flex-col items-center gap-1 rounded-2xl border-2 px-8 py-3 transition-all border-brass-400 bg-ink-700`}>
+                      <span className="text-[10px] font-bold uppercase tracking-wide text-brass-400">Bạn</span>
                       <span className="text-4xl">{p ? p.emoji : '➕'}</span>
                       <span className="truncate text-sm font-bold text-white">{p ? p.name : 'Chọn'}</span>
                     </button>
@@ -130,7 +130,7 @@ export function CharacterScreen() {
                     <button
                       key={i}
                       onClick={() => {playSound('click');setActive(i);}}
-                      className={`flex flex-col items-center gap-1 rounded-2xl border-2 p-2.5 transition-all ${active === i ? 'border-gold-400 bg-ink-700' : 'border-white/10 bg-ink-850'}`}>
+                      className={`flex flex-col items-center gap-1 rounded-2xl border-2 p-2.5 transition-all ${active === i ? 'border-brass-400 bg-ink-700' : 'border-white/10 bg-ink-850'}`}>
                       <span className="text-[10px] font-bold uppercase tracking-wide text-white/40">P{i + 1}</span>
                       <span className="text-3xl">{p ? p.emoji : '➕'}</span>
                       <span className="truncate text-xs font-bold text-white">{p ? p.name : 'Chọn'}</span>
@@ -151,10 +151,10 @@ export function CharacterScreen() {
                     onClick={() => choose(c)}
                     whileHover={!taken ? { scale: 1.03, y: -3 } : undefined}
                     whileTap={!taken ? { scale: 0.97 } : undefined}
-                    className={`relative overflow-hidden rounded-2xl border-2 p-4 text-left transition-all ${selectedHere ? 'border-gold-400' : 'border-white/10'} ${taken ? 'opacity-35' : ''}`}
+                    className={`relative overflow-hidden rounded-2xl border-2 p-4 text-left transition-all ${selectedHere ? 'border-brass-400' : 'border-white/10'} ${taken ? 'opacity-35' : ''}`}
                     style={{ background: `linear-gradient(150deg, ${c.color}26, ${c.color}08)` }}>
                     
-                      {selectedHere && <span className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-gold-400 text-ink-950"><Check size={14} /></span>}
+                      {selectedHere && <span className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-brass-400 text-ink-950"><Check size={14} /></span>}
                       <div className="text-4xl">{c.emoji}</div>
                       <div className="mt-2 font-display text-lg font-extrabold text-white">{c.name}</div>
                       <div className={`text-xs font-bold ${c.accent}`}>{c.title}</div>
@@ -170,7 +170,7 @@ export function CharacterScreen() {
                   <div className="mb-2 text-sm font-bold text-white/70">Số vòng chơi</div>
                   <div className="flex gap-2">
                     {ROUND_OPTIONS.map((r) =>
-                      <button key={r} onClick={() => {playSound('click');setRounds(r);}} className={`flex-1 rounded-xl border-2 py-2.5 font-bold transition-colors ${rounds === r ? 'border-gold-400 bg-gold-400/15 text-gold-400' : 'border-white/10 bg-ink-850 text-white/70'}`}>
+                      <button key={r} onClick={() => {playSound('click');setRounds(r);}} className={`flex-1 rounded-xl border-2 py-2.5 font-bold transition-colors ${rounds === r ? 'border-brass-400 bg-brass-400/15 text-brass-400' : 'border-white/10 bg-ink-850 text-white/70'}`}>
                         {r} vòng
                       </button>
                     )}
@@ -183,7 +183,7 @@ export function CharacterScreen() {
                 whileHover={allPicked ? { scale: 1.02 } : undefined}
                 whileTap={allPicked ? { scale: 0.98 } : undefined}
                 onClick={startOrdering}
-                className="mt-7 flex w-full items-center justify-center gap-2 rounded-2xl bg-gold-500 py-4 font-display text-lg font-extrabold text-ink-950 shadow-glow transition-colors hover:bg-gold-400 disabled:cursor-not-allowed disabled:opacity-40">
+                className="mt-7 flex w-full items-center justify-center gap-2 rounded-2xl bg-brass-500 py-4 font-display text-lg font-extrabold text-ink-950 shadow-glow transition-colors hover:bg-brass-400 disabled:cursor-not-allowed disabled:opacity-40">
                 {isSolo ? (
                   <>
                     <Play size={22} /> Vào bàn cờ
@@ -203,11 +203,11 @@ export function CharacterScreen() {
                 {Object.entries(rolls).sort((a, b) => b[1] - a[1]).map(([id, val], i) => {
                 const c = picks[Number(id)]!;
                 return (
-                  <motion.div key={id} initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.15 }} className={`flex items-center gap-3 rounded-2xl border p-3 ${i === 0 ? 'border-gold-400/60 bg-gold-400/10' : 'border-white/10 bg-ink-850'}`}>
+                  <motion.div key={id} initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.15 }} className={`flex items-center gap-3 rounded-2xl border p-3 ${i === 0 ? 'border-brass-400/60 bg-brass-400/10' : 'border-white/10 bg-ink-850'}`}>
                       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 font-extrabold text-white">{i + 1}</span>
                       <span className="text-2xl">{c.emoji}</span>
                       <span className="flex-1 text-left font-bold text-white">{c.name}</span>
-                      <span className="flex items-center gap-1.5 rounded-lg bg-white/10 px-3 py-1 font-extrabold text-gold-400"><Dices size={16} /> {val}</span>
+                      <span className="flex items-center gap-1.5 rounded-lg bg-white/10 px-3 py-1 font-extrabold text-brass-400"><Dices size={16} /> {val}</span>
                     </motion.div>);
 
               })}

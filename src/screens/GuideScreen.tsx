@@ -20,7 +20,7 @@ const STEPS = [
 
 const SCORES = [
 { icon: Brain, color: 'text-sky-400', name: 'Tri thức', text: 'Từ ô kiến thức, câu hỏi đúng' },
-{ icon: Coins, color: 'text-gold-400', name: 'Tài sản', text: 'Từ đầu tư, xuất khẩu, phần thưởng' },
+{ icon: Coins, color: 'text-brass-400', name: 'Tài sản', text: 'Từ đầu tư, xuất khẩu, phần thưởng' },
 { icon: Target, color: 'text-lime-400', name: 'Chiến lược', text: 'Từ quyết định tối ưu' },
 { icon: Gamepad2, color: 'text-purple-400', name: 'Mini game', text: 'Từ xếp hạng các mini game' }];
 
@@ -36,11 +36,11 @@ export function GuideScreen() {
         <h1 className="font-display text-4xl font-extrabold text-white text-shadow-lg">Hướng dẫn chơi</h1>
         <p className="mt-2 text-white/60">Học kinh tế qua trải nghiệm — cạnh tranh để trở thành nhà vô địch.</p>
 
-        <h2 className="mb-3 mt-8 font-display text-xl font-extrabold text-gold-400">Luồng chơi</h2>
+        <h2 className="mb-3 mt-8 font-display text-xl font-extrabold text-brass-400">Luồng chơi</h2>
         <div className="space-y-3">
           {STEPS.map((s, i) =>
           <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.08 }} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-ink-850 p-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gold-400/15 text-gold-400"><s.icon size={20} /></span>
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brass-400/15 text-brass-400"><s.icon size={20} /></span>
               <div>
                 <div className="font-bold text-white">{s.title}</div>
                 <div className="text-sm text-white/60">{s.text}</div>
@@ -49,7 +49,7 @@ export function GuideScreen() {
           )}
         </div>
 
-        <h2 className="mb-3 mt-8 font-display text-xl font-extrabold text-gold-400">Hệ thống điểm</h2>
+        <h2 className="mb-3 mt-8 font-display text-xl font-extrabold text-brass-400">Hệ thống điểm</h2>
         <div className="grid grid-cols-2 gap-3">
           {SCORES.map((s, i) =>
           <div key={i} className="rounded-2xl border border-white/10 bg-ink-850 p-4">
@@ -60,8 +60,8 @@ export function GuideScreen() {
           )}
         </div>
 
-        <div className="mt-6 rounded-2xl border border-gold-400/20 bg-gold-400/5 p-4 text-sm text-white/75">
-          <span className="font-bold text-gold-400">Điểm cuối cùng:</span> 40% điểm bàn cờ + 40% điểm mini game + 20% thành tích đặc biệt (chiến lược, quyết định tối ưu, số lần thắng mini game).
+        <div className="mt-6 rounded-2xl border border-brass-400/20 bg-brass-400/5 p-4 text-sm text-white/75">
+          <span className="font-bold text-brass-400">Điểm cuối cùng:</span> 40% điểm bàn cờ + 40% điểm mini game + 20% thành tích đặc biệt (chiến lược, quyết định tối ưu, số lần thắng mini game).
         </div>
       </div>
     </div>);
