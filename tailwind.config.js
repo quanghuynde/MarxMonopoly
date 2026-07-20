@@ -8,26 +8,34 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Baloo 2"', 'system-ui', 'sans-serif'],
-        sans: ['Nunito', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'system-ui', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['"Space Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
         ink: {
           950: '#0a0e1a',
           900: '#0f1424',
-          850: '#141a2e',
+          850: '#151b30',
           800: '#1a2138',
           700: '#232c4a',
           600: '#2f3a5e',
         },
-        gold: {
-          400: '#ffd35c',
-          500: '#f5b83d',
-          600: '#e09a1f',
+        brass: {
+          300: '#e9c785',
+          400: '#d4a24e',
+          500: '#c8933f',
+          600: '#a4711f',
+        },
+        seal: {
+          500: '#c23b2f',
+        },
+        paper: {
+          100: '#f3e9d2',
         },
       },
       boxShadow: {
-        glow: '0 0 24px -4px rgba(245,184,61,0.55)',
+        glow: '0 0 24px -4px rgba(200,147,63,0.55)',
         card: '0 10px 30px -10px rgba(0,0,0,0.6)',
         tile: '0 4px 0 0 rgba(0,0,0,0.35)',
       },
