@@ -225,7 +225,7 @@ export function PlayScreen() {
                 const done = i < state.playersCompletedThisRound;
                 const active = i === state.currentPlayerIdx && !roundComplete;
                 return (
-                  <div key={pid} className={`flex-1 rounded-full py-1 text-center text-xs font-bold transition-all ${done ? 'bg-emerald-500/25 text-emerald-400' : active ? 'bg-gold-400/25 text-gold-400 ring-1 ring-gold-400' : 'bg-white/5 text-white/40'}`}>
+                  <div key={pid} className={`flex-1 rounded-full py-1 text-center text-xs font-bold transition-all ${done ? 'bg-emerald-500/25 text-emerald-400' : active ? 'bg-brass-400/25 text-brass-400 ring-1 ring-brass-400' : 'bg-white/5 text-white/40'}`}>
                     {p.character.emoji}
                   </div>);
               })}
@@ -235,13 +235,13 @@ export function PlayScreen() {
           <div className="rounded-2xl border border-white/5 bg-ink-900/60 p-3 sm:px-4">
             {state.gameMode === 'solo' && (
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-                <div className="flex items-center gap-2 text-xs font-bold text-gold-400">
+                <div className="flex items-center gap-2 text-xs font-bold text-brass-400">
                   <Trophy size={14} />
                   <span>Chiến dịch Solo &mdash; Mục tiêu: {state.soloTargetScore} điểm</span>
                 </div>
                 <div className="flex items-center gap-3">
                   {/* Stars Progress */}
-                  <div className="flex gap-0.5 text-gold-400">
+                  <div className="flex gap-0.5 text-brass-400">
                     {[1, 2, 3].map((s) => (
                       <Star key={s} size={14} fill={projectedStars >= s ? 'currentColor' : 'none'} className={projectedStars >= s ? 'animate-pulse' : 'opacity-30'} />
                     ))}
@@ -250,7 +250,7 @@ export function PlayScreen() {
                   <div className="flex items-center gap-2 text-xs">
                     <span className="text-white/60 font-semibold">{currentTotalScore}đ</span>
                     <div className="h-2 w-28 rounded-full bg-white/10 overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-gold-500 to-gold-400 transition-all duration-500" style={{ width: `${Math.min(100, (currentTotalScore / state.soloTargetScore) * 100)}%` }} />
+                      <div className="h-full bg-gradient-to-r from-brass-500 to-brass-400 transition-all duration-500" style={{ width: `${Math.min(100, (currentTotalScore / state.soloTargetScore) * 100)}%` }} />
                     </div>
                   </div>
                 </div>
@@ -342,14 +342,14 @@ export function PlayScreen() {
         <div className="flex flex-col gap-4">
           <div className="rounded-3xl border border-white/10 bg-ink-850 p-3">
             <div className="mb-2 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-white/50">
-              <Swords size={14} className="text-gold-400" /> Bảng điểm
+              <Swords size={14} className="text-brass-400" /> Bảng điểm
             </div>
             <ScoreBar players={state.players} currentPlayerId={currentPlayer?.id} />
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-ink-850 p-3">
             <div className="mb-2 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-white/50">
-              <ScrollText size={14} className="text-gold-400" /> Nhật ký sự kiện
+              <ScrollText size={14} className="text-brass-400" /> Nhật ký sự kiện
             </div>
             <div className="max-h-52 space-y-1.5 overflow-y-auto pr-1">
               <AnimatePresence initial={false}>
@@ -365,11 +365,11 @@ export function PlayScreen() {
           </div>
 
           {/* mini game hint */}
-          <div className="rounded-2xl border border-gold-400/20 bg-gold-400/5 p-3 text-xs text-white/60">
+          <div className="rounded-2xl border border-brass-400/20 bg-brass-400/5 p-3 text-xs text-white/60">
             {isSolo ? (
-              <span>Sau lượt đi này, bạn sẽ tham gia <span className="font-bold text-gold-400">mini game</span> tích điểm. {isBossRound && 'Đây là vòng đấu Boss!'}</span>
+              <span>Sau lượt đi này, bạn sẽ tham gia <span className="font-bold text-brass-400">mini game</span> tích điểm. {isBossRound && <span className="font-bold text-seal-500">Đây là vòng đấu Boss!</span>}</span>
             ) : (
-              <span>Sau khi cả 4 người đi xong sẽ có <span className="font-bold text-gold-400">mini game</span> tranh tài. {isBossRound && 'Vòng này là trận Boss!'}</span>
+              <span>Sau khi cả 4 người đi xong sẽ có <span className="font-bold text-brass-400">mini game</span> tranh tài. {isBossRound && <span className="font-bold text-seal-500">Vòng này là trận Boss!</span>}</span>
             )}
           </div>
         </div>
