@@ -48,7 +48,7 @@ export function Board({ players, currentPlayerId, highlightPos }: Props) {
   }, [players]);
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[640px]">
+    <div className="relative mx-auto aspect-square w-full max-w-[820px]">
       <div
         className="grid h-full w-full gap-1.5"
         style={{ gridTemplateColumns: `repeat(${grid}, 1fr)`, gridTemplateRows: `repeat(${grid}, 1fr)` }}>
@@ -72,12 +72,12 @@ export function Board({ players, currentPlayerId, highlightPos }: Props) {
                 title={tile.name}>
                 
                 <span
-                  className="flex h-5 w-5 items-center justify-center rounded-md sm:h-6 sm:w-6"
+                  className="flex h-4 w-4 shrink-0 items-center justify-center rounded-md sm:h-5 sm:w-5 md:h-6 md:w-6"
                   style={{ backgroundColor: tile.color + '33', color: tile.color }}>
-                  
-                  <Icon name={tile.icon} size={13} />
+
+                  <Icon name={tile.icon} size={11} />
                 </span>
-                <span className="mt-0.5 line-clamp-2 text-[7px] font-bold leading-tight text-white/80 sm:text-[8px]">
+                <span className="mt-0.5 line-clamp-3 px-0.5 text-[7.5px] font-bold leading-[1.15] text-white/85 sm:text-[9px] md:text-[10px]">
                   {tile.name}
                 </span>
                 {highlight &&
